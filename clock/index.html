@@ -11,11 +11,43 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="hours"></div><span class="seperator">:</span>
-        <div class="mins"></div><span class="seperator">:</span>
-        <div class="secs"></div>
-    </div>
+    <main>
+        <div>
+            <label for="range">Analog</label>
+            <input type="range" name="clock_type" id="range" min="0" max="1">
+            <label for="range">Digital</label>
+        </div>
+        <div class="container-digital">
+
+            <div class="hours"></div><span class="seperator">:</span>
+            <div class="mins"></div><span class="seperator">:</span>
+            <div class="secs"></div>
+        </div>
+        <div class="container-analog hidden">
+            <div class="hand hour" data-hour-hand></div>
+            <div class="hand minute" data-minute-hand></div>
+            <div class="hand second" data-second-hand></div>
+            <div class="number number1">1</div>
+            <div class="number number2">2</div>
+            <div class="number number3">3</div>
+            <div class="number number4">4</div>
+            <div class="number number5">5</div>
+            <div class="number number6">6</div>
+            <div class="number number7">7</div>
+            <div class="number number8">8</div>
+            <div class="number number9">9</div>
+            <div class="number number10">10</div>
+            <div class="number number11">11</div>
+            <div class="number number12">12</div>
+
+
+
+
+
+        </div>
+
+    </main>
+
 </body>
 
 </html>

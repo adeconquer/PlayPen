@@ -3,11 +3,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     background-color: black;
     color: white;
 }
 
-.container {
+.container-digital {
     width: 500px;
     height: 500px;
     border: 1px solid white;
@@ -15,6 +16,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 
 .hours,
 .mins,
@@ -31,4 +33,120 @@ body {
 .seperator {
     font-size: 36px;
     color: white
+}
+
+.container-analog {
+    width: 500px;
+    height: 500px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative
+}
+
+.container-analog .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    /* background-color: red; */
+    transform: rotate(var(--rotation))
+}
+
+.container-analog .number1 {
+    --rotation: 30deg;
+}
+
+.container-analog .number2 {
+    --rotation: 60deg;
+}
+
+.container-analog .number3 {
+    --rotation: 90deg;
+}
+
+.container-analog .number4 {
+    --rotation: 120deg;
+}
+
+.container-analog .number5 {
+    --rotation: 150deg;
+}
+
+.container-analog .number6 {
+    --rotation: 180deg;
+}
+
+.container-analog .number7 {
+    --rotation: 210deg;
+}
+
+.container-analog .number8 {
+    --rotation: 240deg;
+}
+
+.container-analog .number9 {
+    --rotation: 270deg;
+}
+
+.container-analog .number10 {
+    --rotation: 300deg;
+}
+
+.container-analog .number11 {
+    --rotation: 330deg;
+}
+
+.container-analog::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.container-analog .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: white;
+    transform-origin: bottom;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform: translate(-50%) rotate(calc(var(--rotation)* 1deg))
+}
+
+.container-analog .hour {
+    width: 10px;
+    height: 30%;
+
+}
+
+.container-analog .minute {
+    width: 7px;
+    height: 35%;
+}
+
+.container-analog .second {
+
+    width: 3px;
+    height: 40%;
+}
+
+#range {
+    width: 25px
+}
+
+.hidden {
+    display: none
 }
