@@ -1,4 +1,4 @@
-body {
+    body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 
 .hours,
 .mins,
@@ -129,7 +128,6 @@ body {
 .container-analog .hour {
     width: 10px;
     height: 30%;
-
 }
 
 .container-analog .minute {
@@ -138,7 +136,6 @@ body {
 }
 
 .container-analog .second {
-
     width: 3px;
     height: 40%;
 }
@@ -150,3 +147,10 @@ body {
 .hidden {
     display: none
 }
+
+[aria-label] {
+    position: relative;
+}
+
+[aria-label="Search by voice"]:after {
+    content: attr(aria-label);

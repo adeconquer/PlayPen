@@ -7,6 +7,7 @@ const input = document.querySelector('#range');
 const hourHand = document.querySelector('[data-hour-hand]');
 const minuteHand = document.querySelector('[data-minute-hand]');
 const secondHand = document.querySelector('[data-second-hand]');
+let dClock, aClock;
 
 
 function getTime() {
@@ -31,19 +32,24 @@ function setRotation(element, rotationRatio) {
     element.style.setProperty('--rotation', rotationRatio * 360)
 }
 
-setInterval(() => getTime(), 1000)
+window.onload = () => {
+    dClock = setInterval(() => getTime(), 1000)
+    aClock = setInterval(() => setAnalogClock(), 1000)
+}
 
 input.addEventListener('change', () => {
-    isDigital = input.value === '1'
+    isDigital = input.value === '1';
+
     if (isDigital) {
+        clearInterval(aClock)
+        dClock = setInterval(() => getTime(), 1000)
         containerDigital.classList.remove('hidden');
         containerAnalog.classList.add('hidden');
-        console.log('yeah')
-        setInterval(() => getTime(), 1000)
-
     } else {
+        clearInterval(dClock)
+        aClock = setInterval(() => setAnalogClock(), 1000)
         containerDigital.classList.add('hidden');
         containerAnalog.classList.remove('hidden');
-        setInterval(() => setAnalogClock(), 1000)
+
     }
 })
