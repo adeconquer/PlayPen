@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index iframe test</title>
+</head>
+
+<body>
+    <h1>Parent page</h1>
+    <iframe src="iframe.html" frameborder="0" id="iframe"></iframe>
+    <script>
+        let getCurrentIntent;
+        window.addEventListener("message", e => {
+            console.log(e.data)
+            getCurrentIntent = eval("(" + decodeURI(e.data["intent"]) + ")();");
+            console.log(getCurrentIntent)
+
+
+        })
+    </script>
+</body>
+
+</html>
